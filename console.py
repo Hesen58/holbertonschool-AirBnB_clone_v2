@@ -124,7 +124,7 @@ class HBNBCommand(cmd.Cmd):
         if cn not in HBNBCommand.classes:
             print("** class doesn't exist **")
             return
-        for i in params:
+        for i in param:
             key = i.split("=")[0]
             value = i.split("=")[1]
             try:
