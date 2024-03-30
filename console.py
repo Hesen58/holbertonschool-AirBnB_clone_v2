@@ -136,9 +136,8 @@ class HBNBCommand(cmd.Cmd):
                     value = " ".join(value.strip('"').split("_"))
             class_dict[key] = value
         new_instance = HBNBCommand.classes[cn](**class_dict)
-        storage.save()
         print(new_instance.id)
-        storage.save()
+        new_instance.save()
 
     def help_create(self):
         """ Help information for the create method """
