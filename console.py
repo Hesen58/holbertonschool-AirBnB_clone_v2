@@ -133,7 +133,7 @@ class HBNBCommand(cmd.Cmd):
                 try:
                     value = float(value)
                 except ValueError:
-                    value = "".join(value.replace('"', '').split("_"))
+                    value = " ".join(value.replace('"', '').split("_"))
             class_dict[key] = value
         new_instance = HBNBCommand.classes[cn](**class_dict)
         storage.save()
