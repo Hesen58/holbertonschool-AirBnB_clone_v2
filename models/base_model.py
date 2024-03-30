@@ -14,10 +14,11 @@ class BaseModel:
         self.updated_at = datetime.now()
         if kwargs is not None:
             for key, value in kwargs.items():
-                if key == "created_at" or key == "updated_at":
-                    value = datetime.strptime(value,
-                                                    '%Y-%m-%dT%H:%M:%S.%f')
-                setattr(self, key, value)
+                if not key == "__class__":
+                    if key == "created_at" or key == "updated_at":
+                        value = datetime.strptime(value,
+                                                  '%Y-%m-%dT%H:%M:%S.%f')
+                    setattr(self, key, value)
 
     def __str__(self):
         """Returns a string representation of the instance"""
