@@ -16,7 +16,7 @@ class BaseModel:
                 if key == "created_at" or key == "updated_at":
                     value = datetime.strptime(value,
                                                     '%Y-%m-%dT%H:%M:%S.%f')
-            setattr(self, key, value)
+                setattr(self, key, value)
 
     def __str__(self):
         """Returns a string representation of the instance"""
