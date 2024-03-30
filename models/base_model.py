@@ -14,9 +14,9 @@ class BaseModel:
         if not kwargs:
             for key, value in kwargs.items():
                 if key == "created_at" or key == "updated_at":
-                    kwargs[key] = datetime.strptime(value,
+                    value = datetime.strptime(value,
                                                     '%Y-%m-%dT%H:%M:%S.%f')
-            self.__dict__.update(kwargs)
+            setattr(self, key, value)
 
     def __str__(self):
         """Returns a string representation of the instance"""
