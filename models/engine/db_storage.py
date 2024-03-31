@@ -58,7 +58,7 @@ class DBStorage:
 
     def reload(self):
         '''Something more useful'''
-        Base.metadata.create_all(engine)
+        Base.metadata.create_all(self.__engine)
         current_session = sessionmaker(
             bind=self.__engine,
             expire_on_commit=False
