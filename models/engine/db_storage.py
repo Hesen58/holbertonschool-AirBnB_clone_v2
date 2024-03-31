@@ -42,8 +42,8 @@ class DBStorage:
             if isinstance(cls, str):
                 cls = eval(str)
             obj = self.__session.query(cls)
-        for i in obj:
-            return "{}.{}".format(type(i.__class__.__name__), i.id)
+        return {"{}.{}"
+                .format(i.__class__.__name__, i.id): i for i in obj}
 
     def new(self, obj):
         '''Something more useful'''
