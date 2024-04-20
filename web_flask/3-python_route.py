@@ -20,6 +20,7 @@ def func3(text):
     return f"C {text.replace('_', ' ')}"
 
 
+@app.route("/python", strict_slashes=False)
 @app.route("/python/<text>", strict_slashes=False)
 def func4(text="is cool"):
     return f"Python {text.replace('_', ' ')}"
