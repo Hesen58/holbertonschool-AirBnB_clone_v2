@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route("/states_list", strict_slashes=False)
 def func1():
     objects = storage.all("State").values()
-    sortobjs = sorted(objects, key=lambda a:a["name"])
+    sortobjs = sorted(objects, key=lambda a:getattr(a, "name"))
     return render_template('7-states_list.html', sortobjs=sortobjs)
 
 
