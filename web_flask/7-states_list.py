@@ -15,7 +15,7 @@ def func1():
 
 
 @app.teardown_appcontext
-def func2():
+def func2(app):
     storage.close()
 
 
