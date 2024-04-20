@@ -27,7 +27,7 @@ def func4(text="is cool"):
 
 
 @app.route("/number/<n>", strict_slashes=False)
-def func4(n):
+def func5(n):
     if isinstance(n, int) is True:
         return f"{n} is a number"
 
