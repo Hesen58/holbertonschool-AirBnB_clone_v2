@@ -62,3 +62,7 @@ class FileStorage:
             del FileStorage.__objects[
                 obj.to_dict()["__class__"] + "." + obj.id]
             self.save()
+
+    def close(self):
+        '''Something more useful'''
+        self.reload()
