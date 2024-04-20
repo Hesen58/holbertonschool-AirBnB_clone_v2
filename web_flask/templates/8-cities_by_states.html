@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<HTML lang="en">
+    <HEAD>
+        <TITLE>HBNB</TITLE>
+    </HEAD>
+    <BODY>
+        <H1>States</H1>
+        <UL>
+            {% for sortstate in sortstates %}
+            <LI>{{ sortstate["id"] }}: <B>{{ sortstate["name"] }}</B>
+                <UL>
+                        {% for sortcity in sortcities %}
+                        {% if sortcity["state_id"] == sortstate["id"] %}
+                        <LI>{{ sortcity["id"] }}: <B>{{ sortcity["name"] }}</B></LI>
+                        {% endif %}
+                        {% endfor %}
+                </UL>
+            </LI>
+            {% endfor %}
+        </UL>
+    </BODY>
+</HTML>
