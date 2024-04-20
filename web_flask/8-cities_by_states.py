@@ -10,10 +10,10 @@ app = Flask(__name__)
 @app.route("/cities_by_states", strict_slashes=False)
 def func1():
     states = storage.all("State").values()
-    sortstates = sorted(states, key=lambda a: getattr(a, "name"))
+    zor1 = sorted(states, key=lambda a: getattr(a, "name"))
     cities = storage.all("City").values()
-    sortcities = sorted(cities, key=lambda b: getattr(b, "name"))
-    return render_template('8-cities_by_states.html', sortstates=sortstates, sortcities=sortcities)
+    zor2 = sorted(cities, key=lambda b: getattr(b, "name"))
+    return render_template('8-cities_by_states.html', zor1=zor1, zor2=zor2)
 
 
 @app.teardown_appcontext

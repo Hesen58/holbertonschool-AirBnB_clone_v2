@@ -6,10 +6,10 @@
     <BODY>
         <H1>States</H1>
         <UL>
-            {% for sortstate in sortstates %}
+            {% for sortstate in zor1 %}
             <LI>{{ sortstate["id"] }}: <B>{{ sortstate["name"] }}</B>
                 <UL>
-                        {% for sortcity in sortcities %}
+                        {% for sortcity in zor2 %}
                         {% if sortcity["state_id"] == sortstate["id"] %}
                         <LI>{{ sortcity["id"] }}: <B>{{ sortcity["name"] }}</B></LI>
                         {% endif %}
