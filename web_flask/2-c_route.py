@@ -16,7 +16,7 @@ def func2():
 
 
 @app.route("/c/<text>", strict_slashes=False)
-def func3():
+def func3(text):
     return f"C {text.replace('_', ' ')}"
 
 
