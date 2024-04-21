@@ -13,7 +13,7 @@ class FileStorage:
         if cls:
             fdict = dict()
             for key in FileStorage.__objects.keys():
-                if cls.__name__ == key.split(".")[0]:
+                if cls.__class__.__name__ == key.split(".")[0]:
                     fdict[key] = FileStorage.__objects[key]
             return fdict
         else:
