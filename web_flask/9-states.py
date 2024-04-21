@@ -20,9 +20,8 @@ def func1():
 def func2(id):
     states = storage.all("State").values()
     sStates = sorted(states, key=lambda a: getattr(a, "name"))
-    cities = storage.all("City").values()
-    sCities = sorted(cities, key=lambda b: getattr(b, "name"))
     for state in sStates:
+        sCities = sorted(state.cities, key=lambda b: getattr(b, "name"))
         if getattr(state, "id") == id:
             return render_template('9-states.html', state=state, zor2=sCities)
     return render_template('9-states.html', state=None)
