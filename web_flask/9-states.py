@@ -5,14 +5,12 @@ from flask import render_template
 from models import storage
 
 app = Flask(__name__)
-states = storage.all("State").values()
-sStates = sorted(states, key=lambda a: getattr(a, "name"))
-for state in sStates:
-    sCities = sorted(state.cities, key=lambda b: getattr(b, "name"))
 
 
 @app.route("/states", strict_slashes=False)
 def func1():
+    states = storage.all("State").values()
+    sStates = sorted(states, key=lambda a: getattr(a, "name"))
     return render_template('7-states_list.html', sortobjs=sStates)
 
 
