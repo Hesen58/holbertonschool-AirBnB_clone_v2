@@ -7,8 +7,8 @@ from models import storage
 app = Flask(__name__)
 states = storage.all("State").values()
 sStates = sorted(states, key=lambda a: getattr(a, "name"))
-cities = storage.all("City").values()
-sCities = sorted(cities, key=lambda b: getattr(b, "name"))
+for state in sStates:
+    sCities = sorted(state.cities, key=lambda b: getattr(b, "name"))
 
 
 @app.route("/states", strict_slashes=False)
